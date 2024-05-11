@@ -1,0 +1,104 @@
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    background-color: #000;
+    background-image: url(./image/hinh-nen-vu-tru-1.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    margin: 100px auto;
+    height: 40em;
+    width: 40em;
+    position: relative;
+    /* background-color: #000; */
+    overflow: hidden;
+    animation: Quay 11s infinite linear;
+}
+
+.sun {
+    height: 12.5em;
+    width: 12.5em;
+    background-color: rgb(255, 255, 255, 0.45);
+    position: absolute;
+    left: calc(50% - 12.5em/2);
+    top: calc(50% - 12.5em/2);
+    border-radius: 50%;
+    box-shadow: 0em 0em 3em white;
+    background-image: url(./image/Sun.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.earth {
+    height: 30em;
+    width: 30em;
+    position: relative;
+    /* background-color: #72cdfa; */
+    position: absolute;
+    top: 5em;
+    left: 5em;
+    /* border-style: solid;
+    border-color: white transparent transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0; */
+    border-radius: 50%;
+    background-color: #72cdfa;
+    background-image: url(./image/Earth.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    background-color: rgb(255, 255, 255, 0.35);
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+    animation: Quay 4s infinite linear;
+}
+
+.moon {
+    background-image: url(./image/Moon.png);
+    background-size: cover;
+    background-position: center;
+    width: 1.5em;
+    height: 1.5em;
+    /* background-color:rgb(0, 0, 0); */
+    position: absolute;
+    border-radius: 50%;
+    top: -1.8em;
+    left: -1.8em;
+    box-shadow: 10px 20px 10px 2px rgb(2, 2, 2);
+    animation: Quay2 2s infinite;
+}
+
+.earth::before {
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    
+    /* animation: Quay 2s infinite linear; */
+}
+
+.moon::before {
+    top: 0.8em;
+    right: 0.8em;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: #ccc;
+}
+
+@keyframes Quay {
+    /* from {transform: rotate(0deg)} */
+    to {transform: rotate(360deg)}
+}
+
+@keyframes Quay2 {
+    /* 0%  {transform: translate(0em, 0em);} */
+    50% {transform: translate(calc(100% + 4em), calc(100% + 4em))}
+    100% {transform: translate(0em, 0em); z-index: -1;}
+    /* {transform: translate(-1.8em, -1.8em);} */
+}
